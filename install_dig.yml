@@ -1,0 +1,10 @@
+- name: Install dig on student servers
+  hosts: student_hosts
+  become: true
+
+  tasks:
+    - name: Install dig
+      ansible.builtin.apt:
+        name: dnsutils
+        state: present
+        update_cache: true
